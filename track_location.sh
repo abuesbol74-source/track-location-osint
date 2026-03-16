@@ -1,4 +1,4 @@
-
+#!/usr/bin/env bash
 #!/bin/bash
 
 # =============================================================================
@@ -89,8 +89,8 @@ url_encode() {
     local encoded=""
     local pos c o
     
-    for (( pos=0 ; pos<${#string} ; pos++ )); do
-        c=${string:$pos:1}
+    for i in $(seq 0 $((${#string}-1))); do
+        c=${string:$i:1}
         case "$c" in
             [-_.~a-zA-Z0-9] ) o="${c}" ;;
             * ) printf -v o '%%%02x' "'$c"
