@@ -240,7 +240,7 @@ track_provinsi() {
     echo -e "${R1}╚══════════════════════════════════════════════════════════╝${N}"
     echo ""
     
-    read -p "$(echo -e ${Y}[?]${W} Nama Provinsi: ${N})" provinsi
+    read -p "$(echo -e "${Y}[?]${W} Nama Provinsi: ${N}")" provinsi
     
     if [ ! -z "$provinsi" ]; then
         get_google_maps "$provinsi, Indonesia"
@@ -257,8 +257,8 @@ track_kabupaten() {
     echo -e "${R1}╚══════════════════════════════════════════════════════════╝${N}"
     echo ""
     
-    read -p "$(echo -e ${Y}[?]${W} Nama Kabupaten/Kota: ${N})" kabupaten
-    read -p "$(echo -e ${Y}[?]${W} Provinsi (opsional): ${N})" provinsi
+    read -p "$(echo -e "${Y}[?]${W} Nama Kabupaten/Kota: ${N}")" kabupaten
+    read -p "$(echo -e "${Y}[?]${W} Provinsi (opsional): ${N}")" provinsi
     
     if [ ! -z "$provinsi" ]; then
         get_google_maps "$kabupaten, $provinsi, Indonesia"
@@ -277,9 +277,9 @@ track_kecamatan() {
     echo -e "${R1}╚══════════════════════════════════════════════════════════╝${N}"
     echo ""
     
-    read -p "$(echo -e ${Y}[?]${W} Nama Kecamatan: ${N})" kecamatan
-    read -p "$(echo -e ${Y}[?]${W} Kabupaten: ${N})" kabupaten
-    read -p "$(echo -e ${Y}[?]${W} Provinsi: ${N})" provinsi
+    read -p "$(echo -e "${Y}[?]${W} Nama Kecamatan: ${N}")" kecamatan
+    read -p "$(echo -e "${Y}[?]${W} Kabupaten: ${N}")" kabupaten
+    read -p "$(echo -e "${Y}[?]${W} Provinsi: ${N}")" provinsi
     
     get_google_maps "$kecamatan, $kabupaten, $provinsi, Indonesia"
 }
@@ -294,10 +294,10 @@ track_desa() {
     echo -e "${R1}╚══════════════════════════════════════════════════════════╝${N}"
     echo ""
     
-    read -p "$(echo -e ${Y}[?]${W} Nama Desa/Kelurahan: ${N})" desa
-    read -p "$(echo -e ${Y}[?]${W} Kecamatan: ${N})" kecamatan
-    read -p "$(echo -e ${Y}[?]${W} Kabupaten: ${N})" kabupaten
-    read -p "$(echo -e ${Y}[?]${W} Provinsi: ${N})" provinsi
+    read -p "$(echo -e "${Y}[?]${W} Nama Desa/Kelurahan: ${N}")" desa
+    read -p "$(echo -e "${Y}[?]${W} Kecamatan: ${N}")" kecamatan
+    read -p "$(echo -e "${Y}[?]${W} Kabupaten: ${N}")" kabupaten
+    read -p "$(echo -e "${Y}[?]${W} Provinsi: ${N}")" provinsi
     
     get_google_maps "$desa, $kecamatan, $kabupaten, $provinsi, Indonesia"
 }
@@ -312,12 +312,12 @@ track_rtrw() {
     echo -e "${R1}╚══════════════════════════════════════════════════════════╝${N}"
     echo ""
     
-    read -p "$(echo -e ${Y}[?]${W} RT: ${N})" rt
-    read -p "$(echo -e ${Y}[?]${W} RW: ${N})" rw
-    read -p "$(echo -e ${Y}[?]${W} Desa/Kelurahan: ${N})" desa
-    read -p "$(echo -e ${Y}[?]${W} Kecamatan: ${N})" kecamatan
-    read -p "$(echo -e ${Y}[?]${W} Kabupaten: ${N})" kabupaten
-    read -p "$(echo -e ${Y}[?]${W} Provinsi: ${N})" provinsi
+    read -p "$(echo -e "${Y}[?]${W} RT: ${N}")" rt
+    read -p "$(echo -e "${Y}[?]${W} RW: ${N}")" rw
+    read -p "$(echo -e "${Y}[?]${W} Desa/Kelurahan: ${N}")" desa
+    read -p "$(echo -e "${Y}[?]${W} Kecamatan: ${N}")" kecamatan
+    read -p "$(echo -e "${Y}[?]${W} Kabupaten: ${N}")" kabupaten
+    read -p "$(echo -e "${Y}[?]${W} Provinsi: ${N}")" provinsi
     
     get_google_maps "RT $rt RW $rw, $desa, $kecamatan, $kabupaten, $provinsi, Indonesia"
 }
@@ -332,7 +332,7 @@ track_phone() {
     echo -e "${R1}╚══════════════════════════════════════════════════════════╝${N}"
     echo ""
     
-    read -p "$(echo -e ${Y}[?]${W} Masukkan nomor HP (62xx): ${N})" nomor
+    read -p "$(echo -e "${Y}[?]${W} Masukkan nomor HP (62xx): ${N}")" nomor
     
     if [[ ! $nomor =~ ^[0-9]+$ ]] || [[ ${#nomor} -lt 10 ]]; then
         echo -e "${R}[✗] Nomor HP tidak valid!${N}"
@@ -404,7 +404,7 @@ track_phone() {
         
         if [ "$kota" != "Tidak dapat ditentukan" ]; then
             echo ""
-            read -p "$(echo -e ${Y}[?]${W} Cari lokasi $kota di Google Maps? (y/n): ${N})" cari
+            read -p "$(echo -e "${Y}[?]${W} Cari lokasi $kota di Google Maps? (y/n): ${N}")" cari
             if [ "$cari" == "y" ]; then
                 get_google_maps "$kota, Indonesia"
             fi
@@ -424,7 +424,7 @@ track_ip() {
     echo -e "${R1}╚══════════════════════════════════════════════════════════╝${N}"
     echo ""
     
-    read -p "$(echo -e ${Y}[?]${W} Masukkan IP (kosongkan untuk IP sendiri): ${N})" ip
+    read -p "$(echo -e "${Y}[?]${W} Masukkan IP (kosongkan untuk IP sendiri): ${N}")" ip
     
     if [ -z "$ip" ]; then
         ip=$(curl -s ifconfig.me)
@@ -490,7 +490,7 @@ track_nik() {
     echo -e "${R1}╚══════════════════════════════════════════════════════════╝${N}"
     echo ""
     
-    read -p "$(echo -e ${Y}[?]${W} Masukkan NIK (16 digit): ${N})" nik
+    read -p "$(echo -e "${Y}[?]${W} Masukkan NIK (16 digit): ${N}")" nik
     
     if [[ ${#nik} -ne 16 || ! $nik =~ ^[0-9]+$ ]]; then
         echo -e "${R}[✗] NIK harus 16 digit angka!${N}"
@@ -544,7 +544,7 @@ track_nik() {
     
     # Tanya cari lokasi
     echo ""
-    read -p "$(echo -e ${Y}[?]${W} Cari lokasi $provinsi di Google Maps? (y/n): ${N})" cari
+    read -p "$(echo -e "${Y}[?]${W} Cari lokasi $provinsi di Google Maps? (y/n): ${N}")" cari
     if [ "$cari" == "y" ]; then
         get_google_maps "$provinsi, Indonesia"
     fi
@@ -560,7 +560,7 @@ track_kk() {
     echo -e "${R1}╚══════════════════════════════════════════════════════════╝${N}"
     echo ""
     
-    read -p "$(echo -e ${Y}[?]${W} Masukkan 6 digit pertama KK (kode wilayah): ${N})" kode
+    read -p "$(echo -e "${Y}[?]${W} Masukkan 6 digit pertama KK (kode wilayah): ${N}")" kode
     
     if [[ ${#kode} -ne 6 || ! $kode =~ ^[0-9]+$ ]]; then
         echo -e "${R}[✗] Kode wilayah harus 6 digit angka!${N}"
@@ -596,7 +596,7 @@ track_kk() {
     
     # Tanya cari lokasi
     echo ""
-    read -p "$(echo -e ${Y}[?]${W} Cari lokasi $provinsi di Google Maps? (y/n): ${N})" cari
+    read -p "$(echo -e "${Y}[?]${W} Cari lokasi $provinsi di Google Maps? (y/n): ${N}")" cari
     if [ "$cari" == "y" ]; then
         get_google_maps "$provinsi, Indonesia"
     fi
@@ -618,11 +618,11 @@ track_sim() {
     echo "0. Kembali"
     echo ""
     
-    read -p "$(echo -e ${Y}[?]${W} Pilih [0-2]: ${N})" metode
+    read -p "$(echo -e "${Y}[?]${W} Pilih [0-2]: ${N}")" metode
     
     case $metode in
         1)
-            read -p "$(echo -e ${Y}[?]${W} Masukkan nomor SIM: ${N})" no_sim
+            read -p "$(echo -e "${Y}[?]${W} Masukkan nomor SIM: ${N}")" no_sim
             echo -e "\n${R1}╔══════════════════════════════════════════════════════════╗${N}"
             echo -e "${R1}║              INFORMASI CEK SIM                          ║${N}"
             echo -e "${R1}╠══════════════════════════════════════════════════════════╣${N}"
@@ -668,7 +668,7 @@ track_paspor() {
     echo "0. Kembali"
     echo ""
     
-    read -p "$(echo -e ${Y}[?]${W} Pilih [0-3]: ${N})" metode
+    read -p "$(echo -e "${Y}[?]${W} Pilih [0-3]: ${N}")" metode
     
     case $metode in
         1)
@@ -725,7 +725,7 @@ track_manual() {
     
     echo -e "${Y}Masukkan alamat lengkap (semakin detail semakin baik)${N}"
     echo ""
-    read -p "$(echo -e ${Y}[?]${W} Alamat: ${N})" alamat
+    read -p "$(echo -e "${Y}[?]${W} Alamat: ${N}")" alamat
     
     if [ ! -z "$alamat" ]; then
         get_google_maps "$alamat"
@@ -779,7 +779,7 @@ main_menu() {
         echo -e "${R1}║                                                                          ║${N}"
         echo -e "${R1}╚══════════════════════════════════════════════════════════════════════════╝${N}"
         echo ""
-        read -p "$(echo -e ${Y}[?]${W} Pilih menu [0-13]: ${N})" choice
+        read -p "$(echo -e "${Y}[?]${W} Pilih menu [0-13]: ${N}")" choice
         
         case $choice in
             1) track_provinsi ;;
