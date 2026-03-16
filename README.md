@@ -13,7 +13,7 @@ pkg install git curl -y
 sudo apt update && sudo apt upgrade -y
 sudo apt install git curl -y
 
-git clone [https://github.com/abuesbol74-source/track-location-osint.git
+git clone https://github.com/abuesbol74-source/track-location-osint.git
 
 cd track-location-osint
 
